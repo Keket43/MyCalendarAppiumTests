@@ -4,35 +4,32 @@ using OpenQA.Selenium.Appium.Enums;
 using OpenQA.Selenium.Appium.Service;
 using System;
 
-
-namespace QuizletUIAppiumTests.Drivers
+namespace MyCalendarAppiumTests
 {
     class AppiumDriver
     {
         private AppiumDriver<AndroidElement> _driver;
 
-        public AppiumDriver<AndroidElement> InitializeAppium()
+        public AppiumDriver<AndroidElement> InittializeAppiumDriver()
         {
             var driverOptions = new AppiumOptions();
             driverOptions.AddAdditionalCapability(MobileCapabilityType.PlatformName, "Android");
-
-            driverOptions.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "10.0");
-            driverOptions.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Pixel XL");
-            // driverOptions.AddAdditionalCapability(MobileCapabilityType.App, "D:\\загрузки\\Quizlet Learn Languages Vocab with Flashcards_v6.4.2_apkpure.com.apk");
-            driverOptions.AddAdditionalCapability(MobileCapabilityType.App, "C:\\Users\\Ket\\Desktop\\app-release (12).apk");
-            //driverOptions.AddAdditionalCapability("AppWaitActivity", "com.quizlet.quizletandroid.ui.intro.IntroActivity");
+            driverOptions.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "10");
+            driverOptions.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Samsung Galaxy S10");
+            driverOptions.AddAdditionalCapability(MobileCapabilityType.AutomationName, "Appium");
+            driverOptions.AddAdditionalCapability(MobileCapabilityType.App, "D:\\krita\\com.popularapp.periodcalendar_1.740.242.gp_242.apk");
 
             var appiumService = new AppiumServiceBuilder()
                 .WithIPAddress("127.0.0.1")
                 .UsingAnyFreePort()
-                .Build();
+                .Build();//auto start server
 
-            if (!appiumService.IsRunning)
+            if (appiumService.IsRunning)
             {
                 appiumService.Start();
             }
 
-            _driver = new AndroidDriver<AndroidElement>(appiumService, driverOptions, TimeSpan.FromSeconds(180));
+            _driver = new AndroidDriver<AndroidElement>(appiumService, driverOptions, TimeSpan.FromSeconds(100));
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             return _driver;
         }
