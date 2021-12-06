@@ -26,14 +26,14 @@ namespace MyCalendarAppiumTests
             calendarPage = new CalendarPage(_driver);
         }
 
-        [When(@"I click on log button")]
-        public void WhenIClickOnLogButton()
+        [When(@"I tap on log button")]
+        public void WhenITapOnLogButton()
         {
             mainPage.LogButton();
         }
 
-        [When(@"I click on add period button")]
-        public void WhenIClickOnAddPeriodButton()
+        [When(@"I tap on add period button")]
+        public void WhenITapOnAddPeriodButton()
         {
             logPage.AddPeriodButton();
         }
@@ -58,14 +58,14 @@ namespace MyCalendarAppiumTests
             Assert.IsTrue(checkResultat);
         }
 
-        [When(@"I click on back button in log page")]
-        public void WhenIClickOnBackButtonInLogPage()
+        [When(@"I tap on back button in log page")]
+        public void WhenITapOnBackButtonInLogPage()
         {
             logPage.BackButton();
         }
 
-        [When(@"I click on calendar button")]
-        public void WhenIClickOnCalendarButton()
+        [When(@"I tap on calendar button")]
+        public void WhenITapOnCalendarButton()
         {
             mainPage.CalendarButton();
         }

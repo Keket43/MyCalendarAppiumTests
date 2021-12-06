@@ -1,6 +1,8 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
+using OpenQA.Selenium.Support.UI;
+using System;
 using TechTalk.SpecFlow;
 
 namespace MyCalendarAppiumTests
@@ -30,36 +32,36 @@ namespace MyCalendarAppiumTests
         }
 
 
-        [When(@"I click on chart button")]
-        public void WhenIClickOnChartButton()
+        [When(@"I tap on chart button")]
+        public void WhenITapOnChartButton()
         {
             mainPage.ChartButton();
         }
 
-        [When(@"I click on add button")]
-        public void WhenIClickOnAddButton()
+        [When(@"I tap on add button")]
+        public void WhenITapOnAddButton()
         {
             chartPage.AddCharackter();
         }
 
-        [When(@"i click on change weight '(.*)'")]
-        public void WhenIClickOnChangeWeight(int weight)
+        [When(@"I tap on change weight '(.*)'")]
+        public void WhenITapOnChangeWeight(int weight)
         {
             chartPage.WeightChangeField()
                 .WeightChangeKg().
                 WeightField("58");
         }
 
-        [When(@"i click on change height '(.*)'")]
-        public void WhenIClickOnChangeHeight(int height)
+        [When(@"I tap on change height '(.*)'")]
+        public void WhenITapOnChangeHeight(int height)
         {
             chartPage.HeightChangeField()
                 .HeightChangeSm()
                 .HeightField("165");
         }
 
-        [When(@"i click on change save")]
-        public void WhenIClickOnChangeSave()
+        [When(@"I tap on change save")]
+        public void WhenITapOnChangeSave()
         {
             chartPage.SaveChanges();
         }
@@ -67,7 +69,6 @@ namespace MyCalendarAppiumTests
         [Then(@"I see a '(.*)' weight in field")]
         public void ThenISeeAWeightInField(int weightResultat)
         {
-            Helper.Waiter(_driver);
             chartPage.BackInMainPage();
             mainPage.NoteButton();
             bool checkResultat = notePage.WeightResultat().Contains(weightResultat.ToString());
