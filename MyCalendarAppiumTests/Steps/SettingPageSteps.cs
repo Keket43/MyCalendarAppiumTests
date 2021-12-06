@@ -29,14 +29,14 @@ namespace MyCalendarAppiumTests
             chartPage = new ChartPage(_driver);
         }
 
-        [When(@"I click on setting button")]
-        public void WhenIClickOnSettingButton()
+        [When(@"I tap on setting button")]
+        public void WhenITapOnSettingButton()
         {
             mainPage.SettingButton();
         }
 
-        [When(@"I click on language button")]
-        public void WhenIClickOnLanguageButton()
+        [When(@"I tap on language button")]
+        public void WhenITapOnLanguageButton()
         {
             Helper.Scroll(651, 1644, 651, 261, _driver);
             Helper.Scroll(651, 1644, 651, 261, _driver);
@@ -44,8 +44,8 @@ namespace MyCalendarAppiumTests
             settingPage.LanguageButton();
         }
 
-        [When(@"i click on Russian language")]
-        public void WhenIClickOnRussianLanguage()
+        [When(@"I tap on Russian language")]
+        public void WhenITapOnRussianLanguage()
         {
             settingPage.RussianButton();
         }

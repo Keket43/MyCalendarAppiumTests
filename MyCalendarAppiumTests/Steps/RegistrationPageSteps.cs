@@ -21,8 +21,8 @@ namespace MyCalendarAppiumTests
             loginPage = new MainPage(_driver);
         }
 
-        [When(@"I click on new user button")]
-        public void WhenIClickOnNewUserButton()
+        [When(@"I tap on new user button")]
+        public void WhenITapOnNewUserButton()
         {
             registrationPage.NewUser();
         }
@@ -39,7 +39,7 @@ namespace MyCalendarAppiumTests
             registrationPage.FirstDayButton();
         }
 
-        [When(@"i save data")]
+        [When(@"I save data")]
         public void WhenISaveData()
         {
             registrationPage.StartSaveButton();

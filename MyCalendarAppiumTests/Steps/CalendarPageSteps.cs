@@ -25,8 +25,8 @@ namespace MyCalendarAppiumTests
             calendarPage = new CalendarPage(_driver);
         }
 
-        [When(@"I click on previos button")]
-        public void WhenIClickOnPreviosButton()
+        [When(@"I tap on previos button")]
+        public void WhenITapOnPreviosButton()
         {
             calendarPage.PreviosPage();
         }
