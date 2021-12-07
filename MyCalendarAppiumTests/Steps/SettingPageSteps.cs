@@ -44,5 +44,21 @@ namespace mibileTest.Steps
         {
             Assert.AreEqual(textResultat, mainPage.CalendarButtonText());
         }
+
+        [When(@"I tap on Settings tab on the main screen")]
+        public void WhenITapOnSettingsTabOnTheMainScreen()
+        {
+           mainPage.SettingButton();
+        }
+
+        [Then(@"I see Settings screen")]
+        public void ThenISeeSettingsScreen()
+        {
+            Assert.AreEqual("Settings",settingPage.SettingsTitleText());
+        }
+
+
+
+
     }
 }
