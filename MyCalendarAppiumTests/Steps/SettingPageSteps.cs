@@ -75,7 +75,41 @@ namespace mibileTest.Steps
             Assert.AreEqual("5", settingPage.AmountOfDaysText());
         }
 
+        [When(@"I tap on OK icon")]
+        public void WhenITapOnOKIcon()
+        {
+            settingPage.TapOnOkIcon();
+        }
 
+        [Then(@"Settings screen opens with new period length")]
+        public void ThenSettingsScreenOpensWithNewPeriodLength()
+        {
+            Assert.AreEqual("5 Days", settingPage.PeriodLengthText());
+        }
+
+        [When(@"I tap on Pregnancy menu item")]
+        public void WhenITapOnPregnancyMenuItem()
+        {
+            settingPage.TapOnPregnancyMenuItem();
+        }
+
+        [When(@"I tap on I'm pregnant toggle")]
+        public void WhenITapOnIMPregnantToggle()
+        {
+            settingPage.TapOnImPregnantToggle();
+        }
+
+        [When(@"I tap on Continue")]
+        public void WhenITapOnContinue()
+        {
+            settingPage.TapOnContinueButton();
+        }
+
+        [When(@"I tap on back arrow icon")]
+        public void WhenITapOnBackArrowIcon()
+        {
+            settingPage.TapOnBackArrowIcon();
+        }
 
 
 

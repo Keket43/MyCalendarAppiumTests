@@ -22,6 +22,12 @@ namespace mibileTest
         private readonly By _periodLengthButton = By.CssSelector("[resource-id=\"com.popularapp.periodcalendar:id/rl_item\"]");
         private readonly By _plusIcon = By.Id("com.popularapp.periodcalendar:id/data_up");
         private readonly By _amountOfDays = By.Id("com.popularapp.periodcalendar:id/data");
+        private readonly By _okIcon = By.Id("com.popularapp.periodcalendar:id/menu_done");
+        private readonly By _periodLengthText = By.CssSelector("[resource-id=\"com.popularapp.periodcalendar:id/tv_value\"]");
+        private readonly By _pregnancyMenuItem = By.CssSelector("[resource-id=\"com.popularapp.periodcalendar:id/rl_item\"]");
+        private readonly By _imPregnantToggle = By.CssSelector("[resource-id=\"com.popularapp.periodcalendar:id / title_layout\"]");
+        private readonly By _continueButton = By.Id("android:id/button1");
+        private readonly By _backArrowIcon = By.Id("android.widget.ImageButton[@content-desc=\"Navigate up\"]");
 
         public SettingPage LanguageButton()
         {
@@ -57,5 +63,43 @@ namespace mibileTest
         {
             return _driver.FindElement(_amountOfDays).Text;
         }
+
+        public SettingPage TapOnOkIcon()
+        {
+            _driver.FindElement(_okIcon).Click();
+            return this;
+        }
+
+        public string PeriodLengthText()
+        {
+            return _driver.FindElement(_periodLengthText).Text;
+        }
+
+        public SettingPage TapOnPregnancyMenuItem()
+        {
+            _driver.FindElement(_pregnancyMenuItem).Click();
+            return this;
+        }
+
+        public SettingPage TapOnImPregnantToggle()
+        {
+            _driver.FindElement(_imPregnantToggle).Click();
+            return this;
+        }
+
+        public SettingPage TapOnContinueButton()
+        {
+            _driver.FindElement(_continueButton).Click();
+            return this;
+        }
+
+        public SettingPage TapOnBackArrowIcon()
+        {
+            _driver.FindElement(_backArrowIcon).Click();
+            return this;
+        }
+
+
+
     }
 }
