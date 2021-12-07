@@ -75,6 +75,18 @@ namespace mibileTest.Steps
             Assert.AreEqual("5", settingPage.AmountOfDaysText());
         }
 
+        [When(@"I tap on OK icon")]
+        public void WhenITapOnOKIcon()
+        {
+            settingPage.TapOnOkIcon();
+        }
+
+        [Then(@"Settings screen opens with new period length")]
+        public void ThenSettingsScreenOpensWithNewPeriodLength()
+        {
+            Assert.AreEqual("5 days", settingPage.PeriodLengthText());
+        }
+
 
 
 

@@ -22,6 +22,8 @@ namespace mibileTest
         private readonly By _periodLengthButton = By.CssSelector("[resource-id=\"com.popularapp.periodcalendar:id/rl_item\"]");
         private readonly By _plusIcon = By.Id("com.popularapp.periodcalendar:id/data_up");
         private readonly By _amountOfDays = By.Id("com.popularapp.periodcalendar:id/data");
+        private readonly By _okIcon = By.Id("com.popularapp.periodcalendar:id/menu_done");
+        private readonly By _periodLengthText = By.CssSelector("[resource-id=\"com.popularapp.periodcalendar:id/tv_value\"]");
 
         public SettingPage LanguageButton()
         {
@@ -56,6 +58,17 @@ namespace mibileTest
         public string AmountOfDaysText()
         {
             return _driver.FindElement(_amountOfDays).Text;
+        }
+
+        public SettingPage TapOnOkIcon()
+        {
+            _driver.FindElement(_okIcon).Click();
+            return this;
+        }
+
+        public string PeriodLengthText()
+        {
+            return _driver.FindElement(_periodLengthText).Text;
         }
     }
 }
