@@ -4,14 +4,13 @@ using OpenQA.Selenium.Appium.Android;
 using System;
 using TechTalk.SpecFlow;
 
-namespace MyCalendarAppiumTests
+namespace mibileTest.Steps
 {
     [Binding]
     public class LogPageSteps
     {
         private readonly AppiumDriver<AndroidElement> _driver;
         private readonly ScenarioContext _scenarioContext;
-        private RegistrationPage registrationPage;
         private LogPage logPage;
         private MainPage mainPage;
         private CalendarPage calendarPage;
@@ -20,7 +19,6 @@ namespace MyCalendarAppiumTests
         {
             _scenarioContext = scenarioContext;
             _driver = _scenarioContext.Get<AndroidDriver<AndroidElement>>("driver");
-            registrationPage = new RegistrationPage(_driver);
             logPage = new LogPage(_driver);
             mainPage = new MainPage(_driver);
             calendarPage = new CalendarPage(_driver);

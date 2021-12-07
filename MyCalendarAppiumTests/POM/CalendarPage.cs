@@ -2,7 +2,7 @@
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 
-namespace MyCalendarAppiumTests
+namespace mibileTest
 {
     public class CalendarPage
     {
