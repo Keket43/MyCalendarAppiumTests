@@ -17,6 +17,7 @@ namespace MyCalendarAppiumTests
         private readonly By _russianButton = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android." +
             "widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView" +
             "/android.widget.CheckedTextView[12]");
+        private readonly By _settingsTitle = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.TextView");
 
         public SettingPage LanguageButton()
         {
@@ -28,6 +29,11 @@ namespace MyCalendarAppiumTests
         {
             _driver.FindElement(_russianButton).Click();
             return this;
+        }
+
+        public string SettingsTitleText()
+        {
+            return _driver.FindElement(_settingsTitle).Text;
         }
     }
 }
