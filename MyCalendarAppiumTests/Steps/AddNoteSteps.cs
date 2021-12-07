@@ -44,8 +44,7 @@ namespace MyCalendarAppiumTests.Steps
         {
             addNotePage.SaveButton();
         }
-
-       
+               
         [Then(@"I see my new note '(.*)' near create Note button")]
         public void ThenISeeMyNewNoteNearCreateNoteButton(string textResult)
         {
@@ -53,17 +52,6 @@ namespace MyCalendarAppiumTests.Steps
             bool checkResult = addNotePage.GetNoteText().Contains(textResult.ToString());
             Assert.IsTrue(checkResult);
         }
-
-
-        //  [Then(@"I see a '(.*)' weight in field")]
-        //public void ThenISeeAWeightInField(int weightResultat)
-        //{
-        //    chartPage.BackInMainPage();
-        //    mainPage.NoteButton();
-        //    bool checkResultat = notePage.WeightResultat().Contains(weightResultat.ToString());
-        //    Assert.IsTrue(checkResultat);
-        //}
-
 
 
         //  2 scenar
@@ -94,12 +82,13 @@ namespace MyCalendarAppiumTests.Steps
             addNotePage.SaveMoodButton();
         }
 
+        
         [Then(@"I see chosen sticker near Moods button")]
         public void ThenISeeChosenStickerNearMoodsButton()
         {
-            addNotePage.GetChosenMoodSticker();
+            Assert.IsTrue(addNotePage.GetChosenMoodSticker());
         }
-
+      
         //4
 
         [When(@"I tap on Symptoms button")]
@@ -116,22 +105,43 @@ namespace MyCalendarAppiumTests.Steps
         [When(@"I save changes on symptoms stickers page")]
         public void WhenISaveChangesOnSymptomsStickersPage()
         {
-            addNotePage();
+          addNotePage.SaveSymptomsButton();
         }
-
-
 
         [Then(@"I see chosen sticker near Symptoms button")]
         public void ThenISeeChosenStickerNearSymptomsButton()
         {
-           addNotePage.GetChosenSymptomsSticker();
+            Assert.IsTrue(addNotePage.GetChosenSymptomsSticker());
         }
 
 
         //5
 
-    }
+        [When(@"I save changes on Add Note page")]
+        public void WhenISaveChangesOnAddNotePage()
+        {
+            addNotePage.AddNoteSaveChanges();
+        }
 
+        [When(@"I tap on Calendar button")]
+        public void WhenITapOnCalendarButton()
+        {
+           addNotePage.CalendarButton();
+        }
+
+        
+        [Then(@"I see ""(.*)"" notes at the calendar page")]
+        public void ThenISeeNotesAtTheCalendarPage(string text)
+        {
+            Assert.AreEqual(text, addNotePage.GetNotesAtCalendarPage());
+        }
+
+        [Then(@"I see ""(.*)"" at the calendar page")]
+        public void ThenISeeAtTheCalendarPage(string text)
+        {
+            Assert.AreEqual(text, addNotePage.GetMoodsAtCalendarPage());
+        }
+    }
 }
 
    
