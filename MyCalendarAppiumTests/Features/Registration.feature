@@ -10,10 +10,10 @@ Scenario: Registration new user
 	When I chose first December as a start cycle day
 	When I save data
 	Then I see calendar button 'Calendar'
-	
-	@registration @invalid
+
+@registration @invalid
 Scenario: Invalid Registration new user
 	When I tap on new user button
 	When I clear on period field button
-	When I clear on cycle field button	
+	When I clear on cycle field button
 	Then I cant went go over page and i see toast message

@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium.Appium.Android;
 using TechTalk.SpecFlow;
 
-namespace MyCalendarAppiumTests
+namespace mibileTest
 {
     [Binding]
     public sealed class Hooks

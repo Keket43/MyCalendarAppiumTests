@@ -3,7 +3,7 @@ using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using TechTalk.SpecFlow;
 
-namespace MyCalendarAppiumTests
+namespace mibileTest.Steps
 {
     [Binding]
     public class CalendarPageSteps

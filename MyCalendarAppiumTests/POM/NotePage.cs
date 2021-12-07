@@ -2,7 +2,7 @@
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 
-namespace MyCalendarAppiumTests
+namespace mibileTest
 {
     public class NotePage
     {
@@ -13,14 +13,13 @@ namespace MyCalendarAppiumTests
             _driver = driver;
         }
 
-        private readonly By _weightText = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android." +
-            "widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout[2]/android." +
-            "widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout[6]/android.widget.RelativeLayout/android.widget.TextView[2]");
+        private readonly By _weightText = By.CssSelector("[resource-id=\"com.popularapp.periodcalendar:id/weight_temp\"]");
+        private readonly By _dText = By.CssSelector("[resource-id=\"com.popularapp.periodcalendar:id/icon\"]");
 
         public string WeightResultat()
         {
+            Helper.VerticalSwipeFromElementCenter(_dText, _driver, 1, 0.2);
             Helper.Scroll(555, 1633, 555, 541, _driver);
-            Helper.Waiter(_driver);
             return _driver.FindElement(_weightText).Text;
         }
     }

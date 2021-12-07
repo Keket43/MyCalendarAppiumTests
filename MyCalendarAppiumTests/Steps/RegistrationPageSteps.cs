@@ -3,7 +3,7 @@ using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using TechTalk.SpecFlow;
 
-namespace MyCalendarAppiumTests
+namespace mibileTest.Steps
 {
     [Binding]
     public class RegistrationSteps
@@ -11,14 +11,12 @@ namespace MyCalendarAppiumTests
         private readonly AppiumDriver<AndroidElement> _driver;
         private readonly ScenarioContext _scenarioContext;
         private RegistrationPage registrationPage;
-        private MainPage loginPage;
 
         public RegistrationSteps(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
             _driver = _scenarioContext.Get<AndroidDriver<AndroidElement>>("driver");
             registrationPage = new RegistrationPage(_driver);
-            loginPage = new MainPage(_driver);
         }
 
         [When(@"I tap on new user button")]

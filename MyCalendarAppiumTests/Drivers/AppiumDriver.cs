@@ -4,7 +4,7 @@ using OpenQA.Selenium.Appium.Enums;
 using OpenQA.Selenium.Appium.Service;
 using System;
 
-namespace MyCalendarAppiumTests
+namespace mibileTest
 {
     class AppiumDriver
     {
