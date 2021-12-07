@@ -3,9 +3,8 @@ using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Threading;
 
-namespace MyCalendarAppiumTests
+namespace mibileTest
 {
     public class ChartPage
     {
@@ -20,19 +19,13 @@ namespace MyCalendarAppiumTests
         private readonly By _weightChangeField = By.Id("com.popularapp.periodcalendar:id/weight_unit");
         private readonly By _heightChangeField = By.Id("com.popularapp.periodcalendar:id/height_unit");
         private readonly By _weightField = By.Id("com.popularapp.periodcalendar:id/weight");
-        private readonly By _weightFieldText = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.RelativeLayout/android.widget.RelativeLayout[1]/android.widget.EditText");
         private readonly By _heightField = By.Id("com.popularapp.periodcalendar:id/height");
-        private readonly By _resultatText = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/" +
-            "android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/" +
-            "android.widget." +
-            "LinearLayout/android.widget.ScrollView/android.widget.RelativeLayout/android.widget.LinearLayout[1]/android.view.View");
         private readonly By _weightChangeKg = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android" +
             ".widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/" +
             "android.widget.CheckedTextView[2]");
         private readonly By _heightChangeSm = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android" +
             ".widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/" +
             "android.widget.CheckedTextView[1]");
-
         private readonly By _saveChanges = By.Id("com.popularapp.periodcalendar:id/bt_right");
         private readonly By _backInMainPage = By.Id("com.popularapp.periodcalendar:id/bt_back");
 
@@ -88,7 +81,8 @@ namespace MyCalendarAppiumTests
 
         public ChartPage BackInMainPage()
         {
-            Thread.Sleep(1000);
+            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.ElementIsVisible(_backInMainPage));
             _driver.FindElement(_backInMainPage).Click();
             return this;
         }
