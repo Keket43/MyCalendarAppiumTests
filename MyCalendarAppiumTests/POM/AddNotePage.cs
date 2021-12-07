@@ -16,7 +16,7 @@ namespace MyCalendarAppiumTests.POM
         }
 
 
-        private readonly By _addNoteButton = By.Id("com.popularapp.periodcalendar:id/bt_go_note");
+        private readonly By _addNoteButton = By.Id("bt_go_note");
         
 
         //private readonly By _noteButton = By.Id("com.popularapp.periodcalendar:id/bt_go_note_layout");
@@ -28,9 +28,9 @@ namespace MyCalendarAppiumTests.POM
 
 
 
-        private readonly By _enterTextField = By.Id("com.popularapp.periodcalendar:id/note");
-
-        private readonly By _saveNoteButton = By.Id("com.popularapp.periodcalendar:id/bt_right");
+        private readonly By _enterTextField = By.Id("note");
+        private readonly By _saveNoteButton = By.Id("bt_right");
+      
 
         private readonly By _noteText = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget." +
             "LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout[2]/android.widget." +
@@ -40,7 +40,7 @@ namespace MyCalendarAppiumTests.POM
         private readonly By _moodsButton = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget." +
             "LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout[2]/android.widget.ScrollView/android." +
             "widget.LinearLayout/android.widget.RelativeLayout[8]/android.widget.RelativeLayout");
-        private readonly By _saveMoodButton = By.Id("com.popularapp.periodcalendar:id/menu_done");
+        private readonly By _saveMoodButton = By.Id("menu_done");
         private readonly By _angelicSticker = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view." +
             "ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/androidx." +
             "recyclerview.widget.RecyclerView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]");
@@ -55,7 +55,8 @@ namespace MyCalendarAppiumTests.POM
         private readonly By _dizzinessStickerTwoStars = By.Id("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android." +
             "widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[10]/android.widget." +
             "LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.ImageView[2]");
-        //save button  com.popularapp.periodcalendar:id/menu_done
+       
+        private readonly By _saveSymptomsButton = By.Id("menu_done");
 
         private readonly By _chosenSymptomsSticker = By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget." +
             "LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout[2]/android.widget.ScrollView/android." +

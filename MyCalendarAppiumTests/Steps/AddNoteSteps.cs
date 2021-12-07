@@ -21,7 +21,7 @@ namespace MyCalendarAppiumTests.Steps
         }
 
        
-        [Given(@"I tap on Add Note button")]
+        [When(@"I tap on Add Note button")]
         public void WhenITapOnAddNoteButton()
         {
            addNotePage.AddNoteButton();
@@ -39,10 +39,10 @@ namespace MyCalendarAppiumTests.Steps
             addNotePage.EnterTextInNoteField(text);
         }
 
-        [When(@"I save changes")]
-        public void WhenISaveChanges()
+        [When(@"I save changes on creating Note page")]
+        public void WhenISaveChangesOnCreatingNotePage()
         {
-            addNotePage.SaveButton();            
+            addNotePage.SaveButton();
         }
 
        
@@ -88,6 +88,12 @@ namespace MyCalendarAppiumTests.Steps
             addNotePage.SelectAngelicSticker();
         }
 
+        [When(@"I save changes on mood stickers page")]
+        public void WhenISaveChangesOnMoodStickersPage()
+        {
+            addNotePage.SaveMoodButton();
+        }
+
         [Then(@"I see chosen sticker near Moods button")]
         public void ThenISeeChosenStickerNearMoodsButton()
         {
@@ -107,8 +113,14 @@ namespace MyCalendarAppiumTests.Steps
         {
             addNotePage.DizzinessTwoStarsSticker();
         }
+        [When(@"I save changes on symptoms stickers page")]
+        public void WhenISaveChangesOnSymptomsStickersPage()
+        {
+            addNotePage();
+        }
 
-       
+
+
         [Then(@"I see chosen sticker near Symptoms button")]
         public void ThenISeeChosenStickerNearSymptomsButton()
         {
