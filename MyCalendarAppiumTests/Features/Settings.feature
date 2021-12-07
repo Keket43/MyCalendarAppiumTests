@@ -36,7 +36,7 @@ Scenario: Set average period length
 Scenario: Turn on Pregnancy mode
 	When I tap on Settings tab on the main screen
 	When I tap on Pregnancy menu item
-	When I tap on "I\'m pregnant!" toggle
+	When I tap on I'm pregnant toggle
 	When I tap on Continue
 	When I tap on back arrow icon
 	Then Pregnancy toggle is ON
@@ -45,8 +45,8 @@ Scenario: Turn on Pregnancy mode
 Scenario: Turn off pregnancy mode
 	When I tap on Settings tab on the main screen
 	When I tap on Pregnancy menu item
-	When I tap on I\'m pregnant toggle
+	When I tap on I'm pregnant toggle
 	When I tap on Continue
 	When I tap on Turned on by mistake option
 	When I tap TURN OFF on popup
-	Then I\'m pregnant toggle is off
+	Then I'm pregnant toggle is off
