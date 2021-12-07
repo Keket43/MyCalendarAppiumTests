@@ -7,7 +7,7 @@ Background:
 	When I tap on new user button
 	When I done information in registration field
 	When I chose first December as a start cycle day
-	When i save data
+	When I save data
 
 @settingsScreen
 Scenario: Open settings module
@@ -18,8 +18,8 @@ Scenario: Open settings module
 Scenario: Set period length manually
 	When I tap on Settings tab on the main screen
 	When I tap on Period Length button
-	When I tap on "Plus" icon
-	Then amount of days on screen increments
+	When I tap on Plus icon
+	Then Amount of days on screen increments
 	When I tap on OK icon
 	Then Settings screen opens with new period length
 

@@ -54,8 +54,28 @@ namespace mibileTest.Steps
         [Then(@"I see Settings screen")]
         public void ThenISeeSettingsScreen()
         {
-            Assert.AreEqual("Settings",settingPage.SettingsTitleText());
+            Assert.AreEqual("Settings", settingPage.SettingsTitleText());
         }
+
+        [When(@"I tap on Period Length button")]
+        public void WhenITapOnPeriodLengthButton()
+        {
+            settingPage.TapOnPeriodLength();
+        }
+
+        [When(@"I tap on Plus icon")]
+        public void WhenITapOnIcon()
+        {
+            settingPage.TapOnPlusIcon();
+        }
+
+        [Then(@"Amount of days on screen increments")]
+        public void ThenAmountOfDaysOnScreenIncrements()
+        {
+            Assert.AreEqual("5", settingPage.AmountOfDaysText());
+        }
+
+
 
 
 
